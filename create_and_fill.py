@@ -9,6 +9,10 @@ from scripts.insert_logdays import insert_logdays
 from scripts.insert_stores import insert_stores
 from scripts.insert_needs import insert_needs
 
+PATH_BRANCH = r"data\branch_products.csv"
+PATH_RC = r"data\rc_products.csv"
+PATH_PRODUCTS = r"data\products.csv"
+
 
 def main():
     """
@@ -25,17 +29,17 @@ def main():
     )
     create_tables(conn)
     load_csv_to_db(
-        path=r"data\branch_products.csv",
+        path=PATH_BRANCH,
         table_name="Branch_product",
         conn=conn
     )
     load_csv_to_db(
-        path=r"data\rc_products.csv",
+        path=PATH_RC,
         table_name="Rc_product",
         conn=conn
     )
     load_csv_to_db(
-        path=r"data\products.csv",
+        path=PATH_PRODUCTS,
         table_name="Products",
         conn=conn
     )
